@@ -38,6 +38,9 @@ jobs:
             - attach_workspace:
                 at: build
             - run:
+                name: check content
+                command: ls -larch
+            - run:
                 name: install awscli
                 command: 'sudo pip install awscli'
             - run:

@@ -43,8 +43,8 @@ jobs:
             - run:
                 name: publish to s3 bucket
                 command: |
-                    aws s3 sync build/project.template.zip s3://{S3_BUCKET} --delete
-                    aws s3 sync build/scene.template.zip s3://{S3_BUCKET} --delete
+                    aws s3 sync build/project.template.zip s3://${S3_BUCKET} --delete
+                    aws s3 sync build/scene.template.zip s3://${S3_BUCKET} --delete
 
 workflows:
     version: 2

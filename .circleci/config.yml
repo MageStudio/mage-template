@@ -20,10 +20,10 @@ jobs:
                 command: 'mkdir build'
             - run:
                 name: zip project
-                command: 'tar -czvf build/project.template.tgz ./project/'
+                command: 'tar -czvf build/project.template.tgz -C project .'
             - run:
                 name: zip scene
-                command: 'tar -czvf build/scene.template.tgz ./scene/'
+                command: 'tar -czvf build/scene.template.tgz -C scene .'
             - run:
                 name: check build folder
                 command: 'ls -larch build'

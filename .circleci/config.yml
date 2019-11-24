@@ -31,8 +31,8 @@ jobs:
                   root: build
                   # Must be relative path from root
                   paths:
-                      - project.template.zip
-                      - scene.template.zip
+                      - project.template.tgz
+                      - scene.template.tgz
 
     publish_to_s3:
         docker:

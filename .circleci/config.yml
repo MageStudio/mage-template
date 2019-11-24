@@ -20,10 +20,10 @@ jobs:
                 command: 'mkdir build'
             - run:
                 name: zip project
-                command: 'zip -r build/project.template.zip ./project/'
+                command: 'tar -czvf build/project.template.tgz ./project/'
             - run:
                 name: zip scene
-                command: 'zip -r build/scene.template.zip ./scene/'
+                command: 'tar -czvf build/scene.template.tgz ./scene/'
             - persist_to_workspace:
                   root: build
                   # Must be relative path from root

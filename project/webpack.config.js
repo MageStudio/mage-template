@@ -1,10 +1,9 @@
 const path = require('path');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const MODE = process.env.MODE;
-const TerserPlugin = require('terser-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
-// Uncomment if you want to run the bundle analyzer
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
     mode: 'production',
@@ -14,7 +13,7 @@ module.exports = {
         'app': './src/index.js'
     },
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'public'),
         filename: 'app.js',
     },
     module:  {
@@ -47,7 +46,9 @@ module.exports = {
         maxEntrypointSize: 800000,
     },
     plugins: [
-        // Uncomment if you want to run the bundle analyzer
-        // new BundleAnalyzerPlugin(),
-    ]
+        new CopyPlugin([
+            { from: 'assets', to: 'assets' },
+            { from: 'css', to: 'css' },
+        ]),
+    ],
 };

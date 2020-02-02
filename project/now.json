@@ -1,0 +1,4 @@
+{
+    "name": "<your app name goes here>",
+    "routes": [{ "src": "/", "dest": "/index.html" }]
+}
